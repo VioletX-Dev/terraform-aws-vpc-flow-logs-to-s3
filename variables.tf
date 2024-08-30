@@ -9,6 +9,12 @@ variable "vpc_id_list" {
 
 }
 
+variable "bucket_region" {
+  description = "Region where the bucket is located"
+  type        = string
+  default     = "us-east-1"
+}
+
 locals {
-  bucket_name     = lower("${var.company}-vpc-flow-logs")
+  bucket_name = lower("${var.company}-vpc-flow-logs")
 }

@@ -9,6 +9,7 @@ resource "aws_flow_log" "default" {
 
 resource "aws_s3_bucket" "flow_logs" {
   bucket = "${local.bucket_name}-${data.aws_region.current.name}"
+  region = var.bucket_region
 }
 
 data "aws_region" "current" {}
